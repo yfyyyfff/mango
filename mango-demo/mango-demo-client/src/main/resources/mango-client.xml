@@ -15,11 +15,11 @@
 
     <context:property-placeholder location="classpath:config.properties" />
 
-    <mango:application name="${application.name}" />
+    <mango:application name="mango-client" />
 
-    <mango:protocol name="mango" port="${protocol.port}" />
+    <mango:protocol name="mango" port="21918" />
 
-    <mango:registry protocol="zookeeper" address="${registry.address}" connect-timeout="5000" />
+    <mango:registry protocol="zookeeper" address="localhost:2181" connect-timeout="50000000" />
 
     <!--refer services -->
     <mango:reference id="demoService" interface="mango.demo.service.DemoService" group="group1" />
